@@ -1,0 +1,253 @@
+﻿@using Model.BusinessModels
+<!-- ko with: requirement -->
+<section class="content-header" data-bind="if: isLoaded()">
+    <h1>
+        Requirement
+        <small>Details</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a data-bind="attr:{'href' : '/'}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a data-bind="text:projectTitle, attr:{'href' : '#/project/' + projectId()}"></a></li>
+        <li class="active" data-bind="text:description"></li>
+    </ol>
+</section>
+<section class="content" data-bind="if: isLoaded()">
+<div class="row ">
+    <div class="col-md-9">
+        <div class="col-md-12">
+            <div class="box box-widget">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 data-bind="text: content().name" class="pull-left"></h2>
+                            @*@if (Model.Role == Role.ProjectAdmin)
+                            {*@
+                                <a data-bind="attr: {href: '#/project/' + projectId() + '/requirement/' + content().id + '/edit'}" class="btn btn-default btn-xs btn-flat pull-right"><i class="fa fa-edit"></i> Edit information</a>
+                                @*<a data-bind="click: btnDeleteProject" class="btn btn-danger btn-flat"><i class="fa fa-remove"></i> Delete</a>*@
+                            @*}*@
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="box-body">
+                                <span data-bind="html: reqDesc()"></span>
+                            </div><!-- /.box -->
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="col-lg-6">
+                                <dl class="dl-horizontal">
+                                    <dt>Tag:</dt>
+                                    <dd data-bind="text: content().uniqueTag"></dd>
+                                    <dt>Created:</dt>
+                                    <dd><span data-bind="text: content().created"></span></dd>
+                                    <dt><span>Created by</span>:</dt>
+                                    <dd data-bind="text: content().createdBy"></dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-6">
+                                <dl class="dl-horizontal">
+                                    <dt>Last Updated:</dt>
+                                    <dd><span data-bind="text: content().updated"></span></dd>
+                                    <dt>Updated by:</dt>
+                                    <dd><span data-bind="text: content().updatedBy"></span></dd>
+                                </dl>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div id="attributes">
+                <div class="box box-widget">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><i class="fa fa-file-text-o"></i> Attributes</h3>
+                        @*@if (Model.Role == Role.ProjectAdmin)
+                        {*@
+                            <button type="submit" data-bind="visible: !editable(),click: edit" class="btn btn-default btn-flat btn-xs pull-right"><i class="fa fa-edit"></i> Edit attributes</button>
+                            <button type="submit" class="btn btn-success btn-flat btn-xs pull-right" data-bind="visible: editable(),click: save"><i class="fa fa-save"></i> Save attributes</button>
+                        @*}*@
+                    </div><!-- /.box-header -->
+                    <div class="loader-frame" data-bind="visible: !isLoaded()">
+                        <img src="/Content/img/preload.GIF">
+                    </div>
+                    <div class="box-body" data-bind="visible: noAttributes()">
+                        Sorry, there are no attributes at the moment :(
+
+                    </div>
+                    <div class="box-body" data-bind="visible: !noAttributes()">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <!-- ko foreach: atrrTypes -->
+                                    <th data-bind="text: $data.name"></th>
+                                    <!-- /ko -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- ko foreach: rows().attributes -->
+                                    <!-- ko if: $data.editType == 1-->
+                                    <td><select class="form-control" data-bind="options: $data.values, value: $data.value" disabled></select></td>
+                                    @*<td><input type="text" class="form-control" data-bind="value: $data.value" disabled /></td>*@
+                                    <!-- /ko -->
+                                    <!-- ko if: $data.editType == 0-->
+                                    <td><input type="text" class="form-control" data-bind="value: $data.value" disabled /></td>
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="box-footer clearfix">
+
+                    </div>
+
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><i class="fa fa-link"></i> Links to Requirements: </h3>
+                        @*@if (Model.Role == Role.ProjectAdmin)
+                        {*@
+                            <button type="submit" class="btn btn-success btn-flat btn-xs pull-right" data-bind="@*visible: editableLinks(),*@click: addLinkDialog"><i class="fa fa-plus"></i>Add link</button>
+                        @*}*@
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <table class="table table-striped" id="links">
+                            <thead data-bind="if: !noLinks()">
+                                <tr>
+                                    <th>Tag</th>
+                                    <th>Requirement</th>
+                                    <th>Specification</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="if: !noLinks()">
+                                <!-- ko foreach: reqLinks() -->
+                                <tr data-bind="attr:{id: $data.linkId}">
+                                    <td data-bind="text: $data.tag"></td>
+                                    <td><a data-bind="text: $data.name,attr:{'href' : '#/project/'+ $parent.projectId()+'/requirement/'+$data.reqId }"></a></td>
+                                    <td><a data-bind="text: $data.specification,attr:{'href' : '#/project/'+ $parent.projectId()+'/requirements/type/'+$data.specId }"></a></td>
+                                    <td data-bind="text: $data.type">
+                                    <td data-bind="visible: $parent.editableLinks()">
+                                        <div class="tools">
+                                            @*<i data-bind="click: $parent.deleteLinkDialog.bind($data.linkId)" class="fa fa-edit"></i>*@
+                                            <i data-bind="click: $parent.deleteLinkDialog.bind($data.linkId)" class="fa fa-trash-o"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- /ko -->
+                            </tbody>
+                            <tbody data-bind="visible: noLinks()">
+                                <span data-bind="visible: noLinks()">There are no links at the moment.</span>
+                            </tbody>
+                        </table>
+                    </div><!-- /.box -->
+
+                    <div class="box-footer clearfix">
+
+                    </div>
+                </div><!-- /.box -->
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="fa fa-comment-o"></i> Comments</h3>
+                </div><!-- /.box-header -->
+                <div class="loader-frame" data-bind="visible: !isLoaded()">
+                    <img src="/Content/img/preload.GIF">
+                </div>
+
+                <div class='box-footer box-comments'>
+                    <!-- ko foreach: comments -->
+                    <div class='box-comment'>
+                        <!-- User image -->
+                        <img class='img-circle img-sm' data-bind="attr:{src: '../Content/avatars/' + $data.avatar }" alt='user image'>
+                        <div class='comment-text'>
+                            <span class="username">
+                                <span data-bind="text: $data.author"></span>
+                                <span class='text-muted pull-right' data-bind="text: $data.date"></span>
+                            </span><!-- /.username -->
+                            <span data-bind="text: $data.text"></span>
+                        </div><!-- /.comment-text -->
+                    </div><!-- /.box-comment -->
+                    <!-- /ko -->
+                </div><!-- /.box-footer -->
+                <div class="box-footer">
+                    <form method="post">
+                        <img class="img-responsive img-circle img-sm" src="@Url.Content("~/Content/avatars/" + @Model.Avatar)" alt="alt text">
+                        <!-- .img-push is used to add margin to elements next to floating images -->
+                        <div class="img-push">
+                            <input type="text" id="comment" class="form-control input-sm" placeholder="Press enter to post comment">
+                        </div>
+                    </form>
+                </div><!-- /.box-footer -->
+            </div><!-- /.box -->
+        </div>
+        <div class="col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="fa fa-history"></i> History</h3>
+                </div><!-- /.box-header -->
+                <div class="loader-frame" data-bind="visible: !isLoaded()">
+                    <img src="/Content/img/preload.GIF">
+                </div>
+                <div class="box-body" data-bind="visible: !noAttributes()">
+
+                </div><!-- /.box-body -->
+
+                <div class="box-footer">
+
+                </div><!-- /.box-footer -->
+            </div><!-- /.box -->
+        </div>
+    </div>
+    <div class="col-md-3">
+        <h4>Info box</h4>
+        <p class="small">
+            Information about this page
+        </p>
+    </div>
+    </div>
+    <div data-bind="modal: {
+    visible: modalVisible,
+    dialogCss: modalSize,
+    header: { data: { label: 'Add Requirement Link' } },
+    body: { name: bodyTemplate, data: bodyData },
+    footer: { data: { action: addLink, primaryLabel: 'Add' } }
+    }">
+    </div>
+</section>
+
+<script type="text/html" id="editLinkTemplate">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="specification">Specification</label>
+                    <div class="col-md-7">
+                        <select class="form-control" id="specification" data-bind="options: specification, optionsText: 'name', value: selectedSpecification"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="requirement">Requirement</label>
+                    <div class="col-md-7">
+                        <select class="form-control" id="requirement" data-bind="options: selectedSpecification().requirements, optionsText: 'name', value: selectedRequirement"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="type">Type</label>
+                    <div class="col-md-7">
+                        <select class="form-control" id="type" data-bind="options: type, value: selectedType"></select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</script>
+<!-- /ko -->
+

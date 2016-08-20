@@ -1,0 +1,129 @@
+﻿@model MA_WEB.Models.UserViewModel
+
+<!-- ko with: home -->
+<section class="content-header">
+    <h1>
+        Dashboard
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+    </ol>
+</section>
+<section class="content" data-bind="if: isLoaded()">
+    <div class="row">
+
+        <section class="col-lg-7 connectedSortable">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="fa fa-file-text-o"></i> Latest Requirements</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-condensed table-hover dataTable" data-bind="if: !noRequirements()">
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Name</th>
+                                <th>Specification</th>
+                                <th>Project</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="if: !noRequirements()">
+                            <!-- ko foreach: latestRequirements() -->
+                            <tr>
+                                <td data-bind="text: $data.uniqueTag"></td>
+                                <td><a data-bind="text: $data.name,attr:{'href' : '#/project/requirement'+ $data.projectId }"></a></td>
+                                <td><a data-bind="text: $data.specification,attr:{'href' : '#/project/'+ $data.id + '/requirements/type/' + $data.requirementType }"></a></td>
+                                <td><a data-bind="text: $data.projectName,attr:{'href' : '#/project/'+ $data.projectId }"></a></td>
+                                <td data-bind="text: $data.created"></td>
+                            </tr>
+                            <!-- /ko -->
+                        </tbody>
+                        <tbody data-bind="visible: noRequirements()">
+                            <span data-bind="visible: noRequirements()">There are no requirements at the moment.</span>
+                        </tbody>
+                    </table>
+                </div><!-- /.box-body -->
+
+                <div class="box-footer">
+
+                </div><!-- /.box-footer -->
+            </div><!-- /.box -->
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="fa fa-warning"></i> Latest issues assigned to you</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-condensed table-hover dataTable" data-bind="if: !noIssues()">
+                        <thead>
+                            <tr>
+                                <th>Priority</th>
+                                <th>Name</th>
+                                <th>Project</th>
+                                <th>Created</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="if: !noIssues()">
+                            <!-- ko foreach: latestIssues() -->
+                            <tr>
+                                <td data-bind="text: $data.priority"></td>
+                                <td><a data-bind="text: $data.name,attr:{'href' : '#/project/'+ $data.projectId + '/issue/' + $data.id }"></a></td>
+                                <td><a data-bind="text: $data.projectName,attr:{'href' : '#/project/'+ $data.projectId }"></a></td>
+                                <td data-bind="text: $data.created"></td>
+                                <td data-bind="text: $data.status"></td>
+                            </tr>
+                            <!-- /ko -->
+                        </tbody>
+                        <tbody data-bind="visible: noIssues()">
+                            <span data-bind="visible: noIssues()">There are no issues assigned to you at the moment.</span>
+                        </tbody>
+                    </table>
+                </div><!-- /.box-body -->
+
+                <div class="box-footer">
+
+                </div><!-- /.box-footer -->
+            </div><!-- /.box -->
+        </section>
+
+        <section class="col-lg-5 connectedSortable">
+            <div class="box box-success">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="fa fa-folder-open-o"></i> Active Projects</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-condensed table-hover dataTable" data-bind="if: !noProjects()">
+                        <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Name</th>
+                            <th>Issue count</th>
+                            <th>Requirement count</th>
+                            <th>Last Updated</th>
+                        </tr>
+                        </thead>
+                        <tbody data-bind="if: !noProjects()">
+                        <!-- ko foreach: activeProjects() -->
+                        <tr>
+                            <td data-bind="text: $data.status"></td>
+                            <td><a data-bind="text: $data.name,attr:{'href' : '#/project/'+ $data.id }"></a></td>
+                            <td data-bind="text: $data.issueCount"></td>
+                            <td data-bind="text: $data.requirementCount"></td>
+                            <td data-bind="text: $data.updated"></td>
+                        </tr>
+                        <!-- /ko -->
+                        </tbody>
+                        <tbody data-bind="visible: noProjects()">
+                        <span data-bind="visible: noProjects()">There are no active projects at the moment.</span>
+                        </tbody>
+                    </table>
+                    <a class="btn btn-default btn-flat  btn-sm pull-right" data-bind="attr:{'href' : '/#/projects/add'}">Add Project</a>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </section>
+    </div>
+</section>
+    <!-- /ko -->

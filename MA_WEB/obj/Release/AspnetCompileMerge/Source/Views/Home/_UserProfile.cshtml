@@ -1,0 +1,147 @@
+﻿
+<!-- ko with: userProfile -->
+<section class="content-header">
+    <h1>
+        User Profile
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">User profile</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content" data-bind="if:isLoaded()">
+    <div class="row">
+        <div class="col-md-9">
+        <div class="col-md-3">
+            <!-- Profile Image -->
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    <img class="profile-user-img img-responsive img-circle" src="@Url.Content("~/Content/avatars/" + @Model.Avatar)" alt="User profile picture">
+                    <h3 class="profile-username text-center">@Model.FName @Model.LName</h3>
+                    @*<p class="text-muted text-center">Software Engineer</p>*@
+                    <p class="text-muted text-center" mall>Member since @Model.MemberSince</p>
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Projects</b> <a class="pull-right" data-bind="text: content().projectCount"></a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Issues</b> <a class="pull-right" data-bind="text: content().issueCount"></a>
+                        </li>
+                        @* <li class="list-group-item">
+                                <b>Friends</b> <a class="pull-right">13,287</a>
+                            </li>*@
+                    </ul>
+                    <a href="/Manage/ChangePassword" class="btn btn-default btn-flat btn-sm center-block">Change Password</a>
+                    @*<a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>*@
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+
+        </div><!-- /.col -->
+            <div class="col-md-9">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
+                        <li><a href="#invitations" data-toggle="tab">Invitations</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="active tab-pane" id="settings" data-bind="visible: isLoaded()">
+                            <div class="project-list">
+                                <div class="box-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputName" class="col-sm-2 control-label">First Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputName" placeholder="First Name" data-bind="value: content().fName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputLName" class="col-sm-2 control-label">Last Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputLName" placeholder="Last Name" data-bind="value: content().lName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                                            <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-bind="value: content().email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPhone" class="col-sm-2 control-label">Phone</label>
+                                            <div class="col-sm-10">
+                                                <input type="tel" class="form-control" id="inputPhone" placeholder="Phone" data-bind="value: content().phone" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputHometown" class="col-sm-2 control-label">Hometown</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputHometown" placeholder="Hometown" data-bind="value: content().hometown">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="changeAvatar" class="col-sm-2 control-label">Avatar</label>
+                                            <div class="col-sm-10">
+                                                <div class="well" data-bind="fileDrag: fileData">
+                                                    <div class="form-group row">
+                                                        <div class="col-md-6">
+                                                            <img style="height: 125px;" class="img-rounded  thumb" data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+                                                            <div data-bind="ifnot: fileData().dataURL">
+                                                                <label class="drag-label">Drag file here</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="file" data-bind="fileInput: fileData, customFileInput: {
+                                          buttonClass: 'btn btn-success',
+                                          fileNameClass: 'disabled form-control',
+                                          onClear: onClear,
+                                        }" accept="image/*">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-danger" data-bind="click: saveProfile">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="invitations" data-bind="visible: isLoaded()">
+                            <table class="table table-hover">
+                                <tbody data-bind="visible: content().invitations">
+                                    <tr>
+                                        <th>Project</th>
+                                        <th>E-mail</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    <!-- ko foreach: content().invitations -->
+                                    <tr>
+                                        <td data-bind="text: projectName"></td>
+                                        <td data-bind="text: email"></td>
+                                        <td><button class="btn btn-success" data-bind="visible: $data.status == 0,click: $parent.acceptInvitation.bind($data.id)">Accept</button>
+                                            <button type="submit" class="btn btn-danger" data-bind="visible: $data.status == 1" disabled="disabled">Accepted</button></td>
+                                    </tr>
+                                    <!-- /ko -->
+                                </tbody>
+                                <p data-bind="visible: !content().invitations">You haven't had any invitations yet :(</p>
+                            </table>
+                        </div><!-- /.tab-pane -->
+                    </div><!-- /.tab-content -->
+                </div><!-- /.nav-tabs-custom -->
+            </div><!-- /.col -->
+    </div>
+        <div class="col-md-3">
+            <h4>Info box</h4>
+            <p class="small">
+                Information about this page
+            </p>
+        </div>
+    </div><!-- /.row -->
+</section><!-- /.content -->
+
+<!-- /ko -->

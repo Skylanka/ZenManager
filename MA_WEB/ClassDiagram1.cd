@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MA_WEB.Controllers.ProjectsController">
+    <Position X="4.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAQAAAQEAABAAAAAAACAwAAAAIAAAAAAgAAAAAACAA=</HashCode>
+      <FileName>Controllers\ProjectsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.RequirementsController">
+    <Position X="7" Y="3.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>MBIBAAAAAQIAAAMAAASAASAAAAAIAAAAAAAAAEggAKA=</HashCode>
+      <FileName>Controllers\RequirementsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.UserProfileController">
+    <Position X="12" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="MA_WEB.Controllers.BaseController" ManuallyRouted="true">
+      <Path>
+        <Point X="11.125" Y="2.617" />
+        <Point X="11.125" Y="3.346" />
+        <Point X="12.75" Y="3.346" />
+        <Point X="12.75" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\UserProfileController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.MeController">
+    <Position X="22.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\MeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.ManageController">
+    <Position X="23" Y="7.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="MA_WEB.Controllers.ManageController.ManageMessageId" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\ManageController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABACAQiAAgAAAAEFhAAAAAAEAIMIAAEEEgAAkAAA=</HashCode>
+      <FileName>Controllers\ManageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.IssueController">
+    <Position X="10.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQABAAEAAAAAAAAQABAAAACABAAAACAAAACAA=</HashCode>
+      <FileName>Controllers\IssueController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.HomeController" Collapsed="true">
+    <Position X="21.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABACBAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.CommentController">
+    <Position X="15.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAQAAAAQAAAEAAAgAAAAAAAA=</HashCode>
+      <FileName>Controllers\CommentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.ChatController">
+    <Position X="15.25" Y="7.25" Width="1.75" />
+    <InheritanceLine Type="MA_WEB.Controllers.BaseController" ManuallyRouted="true">
+      <Path>
+        <Point X="11.125" Y="2.617" />
+        <Point X="11.125" Y="3.375" />
+        <Point X="17.18" Y="3.375" />
+        <Point X="17.18" Y="6.875" />
+        <Point X="16.125" Y="6.875" />
+        <Point X="16.125" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ChatController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.BaseController">
+    <Position X="9.75" Y="1" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAIAAA=</HashCode>
+      <FileName>Controllers\BaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.AttributesController">
+    <Position X="13" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAgAAAAAAAEAACAQAAABAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\AttributesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MA_WEB.Controllers.AccountController" Collapsed="true">
+    <Position X="22" Y="3.5" Width="2.25" />
+    <NestedTypes>
+      <Class Name="MA_WEB.Controllers.AccountController.ChallengeResult" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\AccountController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABAChAGAAAAAAAAFgEgAABAABMKIAAAMRAAQgAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

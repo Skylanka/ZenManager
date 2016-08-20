@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6C09840-8E0B-4313-AA67-E90F8A85073C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Scaffolding.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.AspNet.Scaffolding.EntityFramework.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseBO.cs" />
+    <Compile Include="Base\BaseDatedBO.cs" />
+    <Compile Include="Base\BaseNamedBO.cs" />
+    <Compile Include="Base\IdentityModels.cs" />
+    <Compile Include="Base\ProjectsRequirenmentAttributeTypesBO.cs" />
+    <Compile Include="BusinessModels\EnumTypes.cs" />
+    <Compile Include="BusinessObjects\AttributeBO.cs" />
+    <Compile Include="BusinessObjects\AttributeDescriptionBO.cs" />
+    <Compile Include="BusinessObjects\ChatRecordBO.cs" />
+    <Compile Include="BusinessObjects\CommentBO.cs" />
+    <Compile Include="BusinessObjects\DocumentationBO.cs" />
+    <Compile Include="BusinessObjects\InvitationBO.cs" />
+    <Compile Include="BusinessObjects\IssueBO.cs" />
+    <Compile Include="BusinessObjects\RequirementsLinkBO.cs" />
+    <Compile Include="BusinessObjects\ProjectBO.cs" />
+    <Compile Include="BusinessObjects\RequirementsDescriptionBO.cs" />
+    <Compile Include="BusinessObjects\RequirementBO.cs" />
+    <Compile Include="Migrations\201511031832307_LoadAll.cs" />
+    <Compile Include="Migrations\201511031832307_LoadAll.Designer.cs">
+      <DependentUpon>201511031832307_LoadAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511041036183_ChangedReqBO.cs" />
+    <Compile Include="Migrations\201511041036183_ChangedReqBO.Designer.cs">
+      <DependentUpon>201511041036183_ChangedReqBO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511060955413_ChangedPRA.cs" />
+    <Compile Include="Migrations\201511060955413_ChangedPRA.Designer.cs">
+      <DependentUpon>201511060955413_ChangedPRA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511081414538_AddedProjectToTypes.cs" />
+    <Compile Include="Migrations\201511081414538_AddedProjectToTypes.Designer.cs">
+      <DependentUpon>201511081414538_AddedProjectToTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511121415320_Renamed.cs" />
+    <Compile Include="Migrations\201511121415320_Renamed.Designer.cs">
+      <DependentUpon>201511121415320_Renamed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511251129006_addedRoleDesc.cs" />
+    <Compile Include="Migrations\201511251129006_addedRoleDesc.Designer.cs">
+      <DependentUpon>201511251129006_addedRoleDesc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512201613040_CommentsIssues.cs" />
+    <Compile Include="Migrations\201512201613040_CommentsIssues.Designer.cs">
+      <DependentUpon>201512201613040_CommentsIssues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512202007578_changedProject.cs" />
+    <Compile Include="Migrations\201512202007578_changedProject.Designer.cs">
+      <DependentUpon>201512202007578_changedProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512211036524_ReqChanged.cs" />
+    <Compile Include="Migrations\201512211036524_ReqChanged.Designer.cs">
+      <DependentUpon>201512211036524_ReqChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601181345042_IssueName.cs" />
+    <Compile Include="Migrations\201601181345042_IssueName.Designer.cs">
+      <DependentUpon>201601181345042_IssueName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601181355390_IssueName2.cs" />
+    <Compile Include="Migrations\201601181355390_IssueName2.Designer.cs">
+      <DependentUpon>201601181355390_IssueName2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603021228106_changedIssue.cs" />
+    <Compile Include="Migrations\201603021228106_changedIssue.Designer.cs">
+      <DependentUpon>201603021228106_changedIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603041259595_requirements.cs" />
+    <Compile Include="Migrations\201603041259595_requirements.Designer.cs">
+      <DependentUpon>201603041259595_requirements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603151000199_ChatRecord.cs" />
+    <Compile Include="Migrations\201603151000199_ChatRecord.Designer.cs">
+      <DependentUpon>201603151000199_ChatRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603161035452_CommentChanged.cs" />
+    <Compile Include="Migrations\201603161035452_CommentChanged.Designer.cs">
+      <DependentUpon>201603161035452_CommentChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604051405518_ProjectVersion.cs" />
+    <Compile Include="Migrations\201604051405518_ProjectVersion.Designer.cs">
+      <DependentUpon>201604051405518_ProjectVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604121523292_n.cs" />
+    <Compile Include="Migrations\201604121523292_n.Designer.cs">
+      <DependentUpon>201604121523292_n.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605051920105_AddedDocs.cs" />
+    <Compile Include="Migrations\201605051920105_AddedDocs.Designer.cs">
+      <DependentUpon>201605051920105_AddedDocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605081441518_InvitationBO.cs" />
+    <Compile Include="Migrations\201605081441518_InvitationBO.Designer.cs">
+      <DependentUpon>201605081441518_InvitationBO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605081554072_InvitationBOToProject.cs" />
+    <Compile Include="Migrations\201605081554072_InvitationBOToProject.Designer.cs">
+      <DependentUpon>201605081554072_InvitationBOToProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606211105456_Final.cs" />
+    <Compile Include="Migrations\201606211105456_Final.Designer.cs">
+      <DependentUpon>201606211105456_Final.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511031832307_LoadAll.resx">
+      <DependentUpon>201511031832307_LoadAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511041036183_ChangedReqBO.resx">
+      <DependentUpon>201511041036183_ChangedReqBO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511060955413_ChangedPRA.resx">
+      <DependentUpon>201511060955413_ChangedPRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511081414538_AddedProjectToTypes.resx">
+      <DependentUpon>201511081414538_AddedProjectToTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511121415320_Renamed.resx">
+      <DependentUpon>201511121415320_Renamed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511251129006_addedRoleDesc.resx">
+      <DependentUpon>201511251129006_addedRoleDesc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512201613040_CommentsIssues.resx">
+      <DependentUpon>201512201613040_CommentsIssues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512202007578_changedProject.resx">
+      <DependentUpon>201512202007578_changedProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512211036524_ReqChanged.resx">
+      <DependentUpon>201512211036524_ReqChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601181345042_IssueName.resx">
+      <DependentUpon>201601181345042_IssueName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601181355390_IssueName2.resx">
+      <DependentUpon>201601181355390_IssueName2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603021228106_changedIssue.resx">
+      <DependentUpon>201603021228106_changedIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603041259595_requirements.resx">
+      <DependentUpon>201603041259595_requirements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603151000199_ChatRecord.resx">
+      <DependentUpon>201603151000199_ChatRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603161035452_CommentChanged.resx">
+      <DependentUpon>201603161035452_CommentChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604051405518_ProjectVersion.resx">
+      <DependentUpon>201604051405518_ProjectVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604121523292_n.resx">
+      <DependentUpon>201604121523292_n.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605051920105_AddedDocs.resx">
+      <DependentUpon>201605051920105_AddedDocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605081441518_InvitationBO.resx">
+      <DependentUpon>201605081441518_InvitationBO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605081554072_InvitationBOToProject.resx">
+      <DependentUpon>201605081554072_InvitationBOToProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606211105456_Final.resx">
+      <DependentUpon>201606211105456_Final.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

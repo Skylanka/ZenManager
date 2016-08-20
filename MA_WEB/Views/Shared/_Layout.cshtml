@@ -1,0 +1,162 @@
+﻿@using Microsoft.AspNet.Identity
+@model MA_WEB.Models.UserViewModel
+@using Model.BusinessModels
+
+@{
+    ViewBag.Title = "ZenManager";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    @Styles.Render("~/Content/css/bootstrap")
+    @Styles.Render("~/Content/css/AdminLTE")
+    @Styles.Render("~/Content/css/iCheck")
+    <link href="@Url.Content("~/Content/fonts/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css"/>
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/css/bootstrap-slider")
+    @Styles.Render("~/Content/css/datatables")
+    @Styles.Render("~/Content/css/ionslider")
+    @Styles.Render("~/Content/css/jvectormap")
+    @Styles.Render("~/Content/css/morris")
+    <script src="http://zenmanager.somee.com/signalr/hubs"></script>
+    
+
+</head>
+<body class="hold-transition skin-black sidebar-mini">
+<div class="wrapper">
+<header class="main-header">
+<a href="/" class="logo">
+    <span class="logo-mini"><b>Z</b>M</span>
+    <span class="logo-lg"><b>Zen</b>Manager</span>
+</a>
+<nav class="navbar navbar-static-top" role="navigation">
+<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+    <span class="sr-only">Toggle navigation</span>
+
+</a>
+<div class="navbar-custom-menu">
+<ul class="nav navbar-nav">
+<li class="dropdown user user-menu">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+        <img src="@Url.Content("~/Content/avatars/" + @Model.Avatar)" class="user-image" alt="User Image">
+        <span class="hidden-xs">@Model.FName @Model.LName</span>
+    </a>
+    <ul class="dropdown-menu">
+        <!-- User image -->
+        <li class="user-header">
+            <img src="@Url.Content("~/Content/avatars/" + @Model.Avatar)" class="img-circle" alt="User Image">
+            <p>
+                @Model.FName @Model.LName
+                <small>Member since @Model.MemberSince</small>
+            </p>
+        </li>
+        <!-- Menu Footer-->
+        <li class="user-footer">
+            <div class="pull-left">
+                <a href="#/user/@Model.Id" class="btn btn-default btn-flat">Profile</a>
+            </div>
+            @if (Request.IsAuthenticated)
+            {
+                using (Html.BeginForm("LogOff", "Account", new {area = ""}, FormMethod.Post, new {id = "logoutForm"}))
+                {
+                    @Html.AntiForgeryToken()
+                }
+                <div class="pull-right">
+                    <a href="javascript:sessionStorage.removeItem('accessToken');$('#logoutForm').submit();" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+            }
+        </li>
+    </ul>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<aside class="main-sidebar">
+
+    <section class="sidebar">
+
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="@Url.Content("~/Content/avatars/" + @Model.Avatar)" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>@Model.FName @Model.LName</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="active treeview">
+                <a data-bind="attr:{'href' : '/'}">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-folder"></i>
+                    <span>Projects</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                @foreach (var project in Model.Projects)
+                {
+                    <li><a data-bind="attr:{'href' : '/#/project/' + @project.Id}"><i class="fa fa-circle-o"></i>@project.Name</a></li>
+                }
+                    <li class="divider"></li>
+                    <li><a data-bind="attr:{'href' : '/#/projects'}"><i class="fa fa-circle-o"></i> All Projects</a></li>
+                    <li><a data-bind="attr:{'href' : '/#/projects/add'}"><i class="fa fa-plus"></i> Add Project</a></li>
+                </ul>
+            </li>
+            <li>
+                <a data-bind="attr:{'href' : '/#/activity'}">
+                    <i class="fa fa-th"></i> <span>Activity</span> @*<small class="label pull-right bg-green">new</small>*@
+                </a>
+            </li>
+            <li><a data-bind="attr:{'href' : '/#/documents'}"><i class="fa fa-book"></i> <span>Documents</span></a></li>
+            <li class="header">LABELS</li>
+            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+        </ul>
+    </section>
+
+</aside>
+<div class="content-wrapper">
+        <div id="spaContent" style="display: none;">
+            @RenderSection("SPAViews", required: false)
+        </div>
+</div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            @* <b>Version</b> 2.3.0*@
+        </div>
+
+        <strong>Copyright &copy; 2016 ZenManager.</strong> All rights reserved.
+    </footer>
+</div>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/AdminLTE")
+    @Scripts.Render("~/bundles/jvectormap")
+    @Scripts.Render("~/bundles/jqueryKnob")
+    @Scripts.Render("~/bundles/iCheck")
+    @Scripts.Render("~/bundles/slimScroll")
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("li").removeClass("active");
+        $("#dashboard").addClass("active");
+    });
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>

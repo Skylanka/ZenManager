@@ -1,0 +1,278 @@
+﻿@using Model.BusinessModels
+<!-- ko with: project -->
+<div class="loader-frame" data-bind="visible: !isLoaded()">
+    <img src="/Content/img/preload.GIF">
+</div>
+
+<div data-bind="if: isLoaded">
+<section class="content-header">
+    <h1>Project <small>Details</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a data-bind="attr:{'href' : '/'}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><a data-bind="attr:{'href' : '#/projects'}">Projects</a></li>
+        <li class="active" data-bind="text: content().name"></li>
+    </ol>
+</section>
+<section class="content">
+<div class="row">
+<div class="col-md-9">
+    <div class="box box-widget">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 data-bind="text: content().name" class="pull-left"></h2>
+                   @* @if (Model.Role == Role.ProjectAdmin)
+                    {*@
+                        <a data-bind="attr: {href: '#/project/' + content().id + '/edit'}" class="btn btn-default btn-xs btn-flat pull-right"><i class="fa fa-edit"></i> Edit project</a>
+                                        @*<a data-bind="click: btnDeleteProject" class="btn btn-danger btn-flat"><i class="fa fa-remove"></i> Delete</a>*@
+                    @*/*}*/*@
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-5">
+                    <dl class="dl-horizontal">
+                        <dt>Status:</dt>
+                        <dd><span class="label bg-olive">Active</span></dd>
+                        <dt><span>Created by</span>:</dt>
+                        <dd data-bind="text: content().author"></dd>
+                        <dt>Version:</dt>
+                        <dd><span data-bind="text: content().version"></span></dd>
+                    </dl>
+                </div>
+                <div class="col-lg-7">
+                    <dl class="dl-horizontal">
+                        <dt>Last Updated:</dt>
+                        <dd><span data-bind="text: content().updated"></span></dd>
+                        <dt>Created:</dt>
+                        <dd><span data-bind="text: content().created"></span></dd>
+                        <dt>Participants:</dt>
+                        <dd class="project-people"><span  data-bind="text: participantsNames"></span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="nav-tabs-justified">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#requirements" data-toggle="tab">Specifications</a></li>
+                        <li><a href="#traceability" data-toggle="tab">Traceability</a></li>
+                        <li><a href="#issues" data-toggle="tab">Issues</a></li>
+                        <li><a href="#activity" data-toggle="tab">Last activity</a></li>
+                        <li><a href="#chat" data-toggle="tab"><i class="fa fa-comments-o"></i> Chat</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="active tab-pane" id="requirements" data-bind="visible: isLoaded()">
+                            <div class="project-list">
+                                <table class="table table-condensed table-hover dataTable">
+                                    <thead>
+                                    </thead>
+                                    <tbody data-bind=" foreach: {data: widgetRequirements().types, as: 'item'}">
+                                    <tr>
+                                        <td><a data-bind="attr:{'href' : '#/project/' + $parent.id() + '/requirements/type/' + item.type}, text: item.name"></a><br/><small data-bind="text: item.description"></small></td>
+                                        <td>
+                                            <dl class="dl-horizontal" style="margin-bottom: 0px;">
+                                                <dt><span>Total</span>:</dt>
+                                                <dd data-bind="text: item.count + ' Requirement(s)'"></dd>
+                                                <dt>Updated last 7 days:</dt>
+                                                <dd><span data-bind="text: item.lastUpdated"></span></dd>
+                                            </dl>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="box-footer">
+                                <div class="btn-group pull-right">
+                                    <button type="button" class="btn bg-olive dropdown-toggle pull-right" data-toggle="dropdown" aria-expanded="false">
+                                        Action
+                                        <span class="fa fa-caret-down"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a data-bind="attr: {href: '#/project/' + content().id + '/requirements/add'}">Add Requirement</a></li>
+                                        <li><a data-bind="attr: {href: '#/project/' + content().id + '/requirements/types/add'}">Add Requirement Type</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                                @* <a data-bind="attr: {href: '#/project/' + content().id + '/requirements/add'}" class="btn bg-olive btn-sm  pull-right"><i class="fa fa-plus"></i> Add Requirement</a>
+                                            <a data-bind="attr: {href: '#/project/' + content().id + '/requirements/types/add'}" class="btn bg-olive btn-sm  pull-right"><i class="fa fa-plus"></i> Add Requirement Type</a>*@
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="traceability">
+                            <div class="box-body">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="assignedFrom">Choose a specification:</label>
+                                        <div class="col-md-7">
+                                            <select class="form-control" id="assignedFrom" data-bind="options: widgetRequirements().types, optionsText: 'name', value: selectedFrom"></select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="assignedTo">Compare to:</label>
+                                        <div class="col-md-7">
+                                            <select class="form-control" id="assignedTo" data-bind="options: widgetRequirements().types, optionsText: 'name', value: selectedTo"></select>
+                                        </div>
+                                    </div>
+                                    <p class="text-red" style="display: none; text-align: center;" id="alertChoose">Please, choose different specifications!</p>
+                                    <p class="text-info" style="display: none; text-align: center;" id="alertLinks">There are no links at the moment!</p>
+                                    <div class="form-group">
+                                        <a data-bind="click: compare" class="btn bg-olive pull-right">Compare</a>
+                                    </div>
+                                </form>
+                                
+                                <div class="box-body" data-bind="if: !noLinks()">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th></th>
+                                            <!-- ko foreach: traceability().columns -->
+                                            <th><a href="" data-bind="text: $data.name, attr:{'href' : '#/project/'+ $parent.id +'/requirement/'+$data.id}"></a></th>
+                                            <!-- /ko -->
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- ko foreach: traceability().rows -->
+                                            <tr>
+                                                <td><a data-bind="text: $data.name, attr:{'href' : '#/project/'+ $parent.id()+'/requirement/'+$data.id}"></a></td>
+                                                <!-- ko foreach: $data.links -->
+                                                <td data-bind="visible: $data == 0"></td>
+                                                <td data-bind="visible: $data == 1"><i class="fa fa-level-up"></i></td>
+                                                <td data-bind="visible: $data == 2"><i class="fa fa-level-down" style="-webkit-transform:rotate(90deg);"></i></td>
+                                                <!-- /ko -->
+                                            </tr>
+                                            <!-- /ko -->
+                                        </tbody>
+                                    </table>
+                                </div><!-- /.box -->
+                            </div>                           
+                        </div><!-- /.tab-pane -->
+                        <div class="tab-pane" id="issues">
+                            <div class="box-body">
+                                @* <div class="project-list" data-bind='simpleGrid: gridViewModel'> </div>*@
+                                <table class="table table-bordered table-striped" role="grid" id="issueTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Priority</th>
+                                            <th>Name</th>
+                                            <th>Assigned to</th>
+                                            <th>Created</th>
+                                            <th>Updated</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- ko foreach: issues() -->
+                                    <tr>
+                                        <td ><span class="label label-success" data-bind="visible: $data.priority == 'Low'">Low</span>
+                                        <span class="label label-warning" data-bind="visible: $data.priority == 'Medium'">Medium</span>
+                                        <span class="label label-danger" data-bind="visible: $data.priority == 'High'">High</span></td>
+                                        <td><a data-bind="text: $data.name, attr:{'href' : '#/project/'+ $parent.id()+'/issue/'+$data.id}"></a></td>
+                                        <td data-bind="text: $data.assignedTo"></td>
+                                        <td data-bind="text: $data.created"></td>
+                                        <td data-bind="text: $data.updated"></td>
+                                        <td data-bind="text: $data.status"></td>
+                                    </tr>
+                                        <!-- /ko -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="box-footer">
+                                <a data-bind="click: addIssueDialog" class="btn bg-olive pull-right">Add Issue</a>
+                            </div>
+                        </div><!-- /.tab-pane -->
+                        <div class="tab-pane" id="activity">
+
+                        </div><!-- /.tab-pane -->
+                        <div class="tab-pane" id="chat">
+                            <div class="box-body direct-chat direct-chat-success" id="chat-box">
+                                <div class="direct-chat-messages" id="discussion">
+                                   
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <div class="input-group">
+                                    <input type="text" name="message" id="message" placeholder="Type Message ..." class="form-control">
+                                    <span class="input-group-btn">
+                                        <a id="sendmessage" class="btn btn-success btn-flat">Send</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- /.tab-pane -->
+                    </div><!-- /.tab-content -->
+                </div><!-- /.nav-tabs-custom -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+    <h4>Project description</h4>
+    <p class="small" data-bind="text: content().description"></p>
+    <button type="submit" class="btn btn-default btn-flat btn-sm center-block" data-bind="click: generate">Generate doc</button>
+    <!-- ko foreach: content().docs -->
+    <i class="fa fa-file-word-o"></i><a data-bind="attr:{ href: '/Docs/' + $data}"><small data-bind="text: ' ' + $data"></small></a><br>
+    <!-- /ko -->
+</div>
+</div>
+
+</section>
+</div>
+
+<div data-bind="modal: {
+    visible: modalVisible,
+    dialogCss: modalSize,
+    header: { data: { label: 'New Issue' } },
+    body: { name: bodyTemplate, data: bodyData },
+    footer: { data: { action: saveIssue, primaryLabel: 'Save' } }
+    }">
+</div>
+
+
+
+<script type="text/html" id="issueTemplate">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="name">Name</label>
+                    <div class="col-md-7">
+                        <input id="name" name="name" type="text" placeholder="Issue name" class="form-control" data-bind="value: name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="description">Description</label>
+                    <div class="col-md-7">
+                        <textarea id="description" name="description" rows="5" type="text" placeholder="Description" class="form-control" data-bind="value: description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="assignedto">Assigned to</label>
+                    <div class="col-md-7">
+                        <select class="form-control" id="assignedto" data-bind="options: opt, optionsText: 'name', value: selected"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="priority">Priority</label>
+                    <div class="col-md-7">
+                        <select class="form-control" id="priority">
+                            <option selected>Low</option>
+                            <option>Medium</option>
+                            <option>High</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script>
+      /*$(function () {
+        $('#issueTable').DataTable();
+      });*/
+</script>
+<!-- /ko -->
+

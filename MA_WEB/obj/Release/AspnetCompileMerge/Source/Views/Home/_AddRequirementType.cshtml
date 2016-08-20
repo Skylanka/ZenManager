@@ -1,0 +1,105 @@
+﻿@using Model.BusinessModels
+@*@if (Model.Role == Role.ProjectAdmin)
+{*@
+    <!-- ko with: addRequirementType -->
+    <section class="content-header">
+        <h1 data-bind="html: title">
+        </h1>
+        <ol class="breadcrumb">
+            <li><a data-bind="attr:{'href' : '/'}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"><a data-bind="attr:{'href' : '#/projects'}">Projects</a></li>
+            <li class="active"><a data-bind="attr:{'href' : '#/project/' + projectId()}, text: projectName"></a></li>
+            <li class="active" data-bind="text: pageDescription"></li>
+        </ol>
+    </section>
+    <section class="content" data-bind="if: isLoaded">
+
+        <div class="row">
+
+            <!-- left column -->
+            <div class="col-md-9">
+                <!-- general form elements -->
+                <div class="box ">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Requirement Type</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <form role="form">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter name" data-bind="value: name">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" rows="5" placeholder="Enter description" id="description" data-bind="value: description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="typeTag">Tag</label>
+                                <input type="text" class="form-control" id="typeTag" data-bind="value: tag">
+                            </div>
+                            <div class="form-group">
+                                <label>Attributes</label><button data-bind="click: addAttributeDialog" class="btn btn-default btn-xs btn-flat pull-right"> <i class="fa fa-plus"></i> Add Attribute</button>
+                                <select multiple="multiple" multiple="true" data-placeholder="Select an attribute" class="form-control select2" style="width: 100%;"></select>
+                            </div>
+                            <!-- /.form-group -->
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="submit" class="btn bg-olive pull-right" data-bind="click: save"><i class="fa fa-save"></i> Save</button>
+                            <button type="submit" class="btn btn-danger pull-left" data-bind="click: deleteRTdialog">Delete</button>
+                        </div>
+                    </form>
+                </div><!-- /.box -->
+            </div>
+            <div class="col-md-3">
+                <h4>Info box</h4>
+                <p class="small">
+                    Information about this page
+                </p>
+            </div>
+        </div>
+        <div data-bind="modal: {
+            visible: modalVisible,
+            dialogCss: modalSize,
+            header: { data: { label: 'Add Attribute' } },
+            body: { name: bodyTemplate, data: bodyData },
+            footer: { data: { action: addAttribute, primaryLabel: 'Add' } }
+            }">
+        </div>
+
+    </section>
+
+    <script type="text/html" id="addAttributeTemplate">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="name">Name</label>
+                        <div class="col-md-7">
+                            <input id="name" name="name" type="text" placeholder="Name" class="form-control" data-bind="value: name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="type">Type</label>
+                        <div class="col-md-7">
+                            <select class="form-control" id="type" data-bind="options: type, value: selectedType"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="defaultValue">Default Value</label>
+                        <div class="col-md-7">
+                            <input id="defaultValue" name="defaultValue" type="text" placeholder="Default Value" class="form-control" data-bind="value: defaultValue">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="values">Values</label>
+                        <div class="col-md-7">
+                            <input id="values" name="values" type="text" placeholder="Enter values separated by commas " class="form-control" data-bind="value: value">
+                        </div>
+                    </div>                   
+                </form>
+            </div>
+        </div>
+    </script>
+    <!-- /ko -->
+@*}*@

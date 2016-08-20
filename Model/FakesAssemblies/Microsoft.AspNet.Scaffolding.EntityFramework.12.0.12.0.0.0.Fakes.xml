@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNet.Scaffolding.EntityFramework.12.0.12.0.0.0.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions">
+            <summary>Shim type of Microsoft.AspNet.Scaffolding.EntityFramework.CodeTypeExtensions</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.IsCodeClassCodeType">
+            <summary>Sets the shim of CodeTypeExtensions.IsCodeClass(CodeType codeType)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.IsGenericTypeCodeType">
+            <summary>Sets the shim of CodeTypeExtensions.IsGenericType(CodeType codeType)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.IsNestedClassCodeType">
+            <summary>Sets the shim of CodeTypeExtensions.IsNestedClass(CodeType codeType)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.IsStaticClassCodeType">
+            <summary>Sets the shim of CodeTypeExtensions.IsStaticClass(CodeType codeType)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.IsValidDbContextTypeCodeType">
+            <summary>Sets the shim of CodeTypeExtensions.IsValidDbContextType(CodeType codeType)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.IsValidEntityTypeCodeType">
+            <summary>Sets the shim of CodeTypeExtensions.IsValidEntityType(CodeType codeType)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimCodeTypeExtensions.IsValidWebProjectEntityTypeCodeType">
+            <summary>Sets the shim of CodeTypeExtensions.IsValidWebProjectEntityType(CodeType codeType)</summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources">
+            <summary>Shim type of Microsoft.AspNet.Scaffolding.EntityFramework.DynamicModelResources</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.#ctor(Microsoft.AspNet.Scaffolding.EntityFramework.DynamicModelResources)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.AllInstances.UnableToFindTypeGet">
+            <summary>Sets the shim of DynamicModelResources.get_UnableToFindType()</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.AllInstances.UnableToFindTypeSetString">
+            <summary>Sets the shim of DynamicModelResources.set_UnableToFindType(String value)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.AllInstances.UnableToRetrieveMetadataGet">
+            <summary>Sets the shim of DynamicModelResources.get_UnableToRetrieveMetadata()</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.AllInstances.UnableToRetrieveMetadataSetString">
+            <summary>Sets the shim of DynamicModelResources.set_UnableToRetrieveMetadata(String value)</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.Constructor">
+            <summary>Sets the shim of DynamicModelResources.DynamicModelResources()</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.StaticConstructor">
+            <summary>Sets the shim of DynamicModelResources.DynamicModelResources()</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.UnableToFindTypeGet">
+            <summary>Sets the shim of DynamicModelResources.get_UnableToFindType()</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.UnableToFindTypeSetString">
+            <summary>Sets the shim of DynamicModelResources.set_UnableToFindType(String value)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.UnableToRetrieveMetadataGet">
+            <summary>Sets the shim of DynamicModelResources.get_UnableToRetrieveMetadata()</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.ShimDynamicModelResources.UnableToRetrieveMetadataSetString">
+            <summary>Sets the shim of DynamicModelResources.set_UnableToRetrieveMetadata(String value)</summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService">
+            <summary>Stub type of Microsoft.AspNet.Scaffolding.EntityFramework.IEntityFrameworkService</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService.#ctor">
+            <summary>Initializes a new instance of type StubIEntityFrameworkService</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService.AddRequiredEntityCodeGenerationContextStringString">
+            <summary>Sets the stub of IEntityFrameworkService.AddRequiredEntity(CodeGenerationContext context, String contextTypeFullName, String entityTypeFullName)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService.Microsoft#AspNet#Scaffolding#EntityFramework#IEntityFrameworkService#Dependencies">
+            <summary>Sets the stub of IEntityFrameworkService.get_Dependencies()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService.DependenciesGet">
+            <summary>Sets the stub of IEntityFrameworkService.get_Dependencies()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService.GetPluralizedWordStringCultureInfo">
+            <summary>Sets the stub of IEntityFrameworkService.GetPluralizedWord(String word, CultureInfo cultureInfo)</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService.GetSingularizedWordStringCultureInfo">
+            <summary>Sets the stub of IEntityFrameworkService.GetSingularizedWord(String word, CultureInfo cultureInfo)</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService.Microsoft#AspNet#Scaffolding#EntityFramework#IEntityFrameworkService#AddRequiredEntity(Microsoft.AspNet.Scaffolding.CodeGenerationContext,System.String,System.String)">
+            <summary>Sets the stub of IEntityFrameworkService.AddRequiredEntity(CodeGenerationContext context, String contextTypeFullName, String entityTypeFullName)</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService.Microsoft#AspNet#Scaffolding#EntityFramework#IEntityFrameworkService#GetPluralizedWord(System.String,System.Globalization.CultureInfo)">
+            <summary>Sets the stub of IEntityFrameworkService.GetPluralizedWord(String word, CultureInfo cultureInfo)</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Fakes.StubIEntityFrameworkService.Microsoft#AspNet#Scaffolding#EntityFramework#IEntityFrameworkService#GetSingularizedWord(System.String,System.Globalization.CultureInfo)">
+            <summary>Sets the stub of IEntityFrameworkService.GetSingularizedWord(String word, CultureInfo cultureInfo)</summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader">
+            <summary>Shim type of Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.MetadataReader</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.#ctor(Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.MetadataReader)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.AllInstances.GetAssociationDirectionAssociationDirection">
+            <summary>Sets the shim of MetadataReader.GetAssociationDirection(AssociationDirection dynamicDataAssociationDirectionValue)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.AllInstances.GetPropertiesMetaTable">
+            <summary>Sets the shim of MetadataReader.GetProperties(MetaTable table)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.AllInstances.GetRelatedModelMetadataMetaColumn">
+            <summary>Sets the shim of MetadataReader.GetRelatedModelMetadata(MetaColumn column)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.AllInstances.GetRelatedModelsModelMetadata">
+            <summary>Sets the shim of MetadataReader.GetRelatedModels(ModelMetadata metadata)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.AllInstances.IsIndependentAssociationMetaColumn">
+            <summary>Sets the shim of MetadataReader.IsIndependentAssociation(MetaColumn column)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.AllInstances.ReadMetadataMetaTable">
+            <summary>Sets the shim of MetadataReader.ReadMetadata(MetaTable table)</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.ConstructorString">
+            <summary>Sets the shim of MetadataReader.MetadataReader(String projectTypeGuid)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.GetAssociationDirectionAssociationDirection">
+            <summary>Sets the shim of MetadataReader.GetAssociationDirection(AssociationDirection dynamicDataAssociationDirectionValue)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.GetPropertiesMetaTable">
+            <summary>Sets the shim of MetadataReader.GetProperties(MetaTable table)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.GetRelatedModelMetadataMetaColumn">
+            <summary>Sets the shim of MetadataReader.GetRelatedModelMetadata(MetaColumn column)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.GetRelatedModelsModelMetadata">
+            <summary>Sets the shim of MetadataReader.GetRelatedModels(ModelMetadata metadata)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.IsIndependentAssociationMetaColumn">
+            <summary>Sets the shim of MetadataReader.IsIndependentAssociation(MetaColumn column)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader.ReadMetadataMetaTable">
+            <summary>Sets the shim of MetadataReader.ReadMetadata(MetaTable table)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader._GetRelatedModelMetadatab__9MetaColumn">
+            <summary>Sets the shim of MetadataReader.&lt;GetRelatedModelMetadata&gt;b__9(MetaColumn pk)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader._GetRelatedModelMetadatab__aMetaColumn">
+            <summary>Sets the shim of MetadataReader.&lt;GetRelatedModelMetadata&gt;b__a(MetaColumn pk)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader._GetRelatedModelsb__3PropertyMetadata">
+            <summary>Sets the shim of MetadataReader.&lt;GetRelatedModels&gt;b__3(PropertyMetadata property)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader._GetRelatedModelsb__4PropertyMetadata">
+            <summary>Sets the shim of MetadataReader.&lt;GetRelatedModels&gt;b__4(PropertyMetadata property)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.ShimMetadataReader._ReadMetadatab__1PropertyMetadata">
+            <summary>Sets the shim of MetadataReader.&lt;ReadMetadata&gt;b__1(PropertyMetadata p)</summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel">
+            <summary>Stub type of Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.IDynamicModel</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.#ctor">
+            <summary>Initializes a new instance of type StubIDynamicModel</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.AddEntitySetString">
+            <summary>Sets the stub of IDynamicModel.AddEntitySet(String entityTypeQualifiedName)</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.ContainsEntitySetString">
+            <summary>Sets the stub of IDynamicModel.ContainsEntitySet(String entityTypeQualifiedName)</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.GetMetadataString">
+            <summary>Sets the stub of IDynamicModel.GetMetadata(String entityTypeQualifiedName)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModel#IsDirty">
+            <summary>Sets the stub of IDynamicModel.get_IsDirty()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.IsDirtyGet">
+            <summary>Sets the stub of IDynamicModel.get_IsDirty()</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModel#IsReadOnly">
+            <summary>Sets the stub of IDynamicModel.get_IsReadOnly()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.IsReadOnlyGet">
+            <summary>Sets the stub of IDynamicModel.get_IsReadOnly()</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModel#AddEntitySet(System.String)">
+            <summary>Sets the stub of IDynamicModel.AddEntitySet(String entityTypeQualifiedName)</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModel#ContainsEntitySet(System.String)">
+            <summary>Sets the stub of IDynamicModel.ContainsEntitySet(String entityTypeQualifiedName)</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModel.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModel#GetMetadata(System.String)">
+            <summary>Sets the stub of IDynamicModel.GetMetadata(String entityTypeQualifiedName)</summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory">
+            <summary>Stub type of Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.IDynamicModelFactory</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.#ctor">
+            <summary>Initializes a new instance of type StubIDynamicModelFactory</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.AttachBackingFieldToConnectionStringName">
+            <summary>Attaches delegates to emulate StubIDynamicModelFactory.ConnectionStringName as a property with a backing field.</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.AttachBackingFieldToContextTypeQualifiedName">
+            <summary>Attaches delegates to emulate StubIDynamicModelFactory.ContextTypeQualifiedName as a property with a backing field.</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.AttachBackingFieldToProjectLanguageGuid">
+            <summary>Attaches delegates to emulate StubIDynamicModelFactory.ProjectLanguageGuid as a property with a backing field.</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.AttachBackingFieldToResources">
+            <summary>Attaches delegates to emulate StubIDynamicModelFactory.Resources as a property with a backing field.</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModelFactory#ConnectionStringName">
+            <summary>Sets the stub of IDynamicModelFactory.get_ConnectionStringName()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.ConnectionStringNameGet">
+            <summary>Sets the stub of IDynamicModelFactory.get_ConnectionStringName()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.ConnectionStringNameSetString">
+            <summary>Sets the stub of IDynamicModelFactory.set_ConnectionStringName(String value)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModelFactory#ContextTypeQualifiedName">
+            <summary>Sets the stub of IDynamicModelFactory.get_ContextTypeQualifiedName()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.ContextTypeQualifiedNameGet">
+            <summary>Sets the stub of IDynamicModelFactory.get_ContextTypeQualifiedName()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.ContextTypeQualifiedNameSetString">
+            <summary>Sets the stub of IDynamicModelFactory.set_ContextTypeQualifiedName(String value)</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.CreateDynamicModel">
+            <summary>Sets the stub of IDynamicModelFactory.CreateDynamicModel()</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModelFactory#CreateDynamicModel">
+            <summary>Sets the stub of IDynamicModelFactory.CreateDynamicModel()</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModelFactory#ProjectLanguageGuid">
+            <summary>Sets the stub of IDynamicModelFactory.get_ProjectLanguageGuid()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.ProjectLanguageGuidGet">
+            <summary>Sets the stub of IDynamicModelFactory.get_ProjectLanguageGuid()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.ProjectLanguageGuidSetString">
+            <summary>Sets the stub of IDynamicModelFactory.set_ProjectLanguageGuid(String value)</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IDynamicModelFactory#Resources">
+            <summary>Sets the stub of IDynamicModelFactory.get_Resources()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.ResourcesGet">
+            <summary>Sets the stub of IDynamicModelFactory.get_Resources()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIDynamicModelFactory.ResourcesSetDynamicModelResources">
+            <summary>Sets the stub of IDynamicModelFactory.set_Resources(DynamicModelResources value)</summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIEFColumnPropertiesProvider">
+            <summary>Stub type of Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.IEFColumnPropertiesProvider</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIEFColumnPropertiesProvider.#ctor">
+            <summary>Initializes a new instance of type StubIEFColumnPropertiesProvider</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIEFColumnPropertiesProvider.Microsoft#AspNet#Scaffolding#EntityFramework#Infrastructure#IEFColumnPropertiesProvider#ColumnProperties">
+            <summary>Sets the stub of IEFColumnPropertiesProvider.get_ColumnProperties()</summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubIEFColumnPropertiesProvider.ColumnPropertiesGet">
+            <summary>Sets the stub of IEFColumnPropertiesProvider.get_ColumnProperties()</summary>
+        </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubMetadataReader">
+            <summary>Stub type of Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.MetadataReader</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubMetadataReader.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubMetadataReader.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubMetadataReader.InitializeStub">
+            <summary>Initializes a new instance of type StubMetadataReader</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubMetadataReader.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Microsoft.AspNet.Scaffolding.EntityFramework.Infrastructure.Fakes.StubMetadataReader.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

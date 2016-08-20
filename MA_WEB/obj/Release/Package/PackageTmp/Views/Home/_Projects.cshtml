@@ -1,0 +1,61 @@
+﻿@using Model.Base
+@{
+    ViewBag.Title = "RM | Projects";
+}
+<!-- ko with: projects -->
+<section class="content-header">
+    <h1>
+        Projects
+        <small>Details</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a data-bind="attr:{'href' : '/'}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active" data-bind="text:title"></li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row ">
+        <div class="col-md-9">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title pull-left">All projects assigned to this account</h3>
+                    <a href="#/projects/add" class="btn btn-xs bg-olive pull-right"><i class="fa fa-plus"></i> Add Project</a>
+                </div><!-- /.box-header -->
+                @*<div class="loader-frame" data-bind="visible: !isLoaded()">
+                    <img src="/Content/img/preload.GIF">
+                </div>*@
+                <div class="box-body" @*data-bind="if: isLoaded()"*@>
+                    @*<table class="table table-striped">
+                        <thead><tr>
+                            <th style="width: 400px">Name</th>
+                            <th>Description</th>
+                            <th>Author</th>
+                        </tr></thead>
+                        <tbody data-bind=" foreach: {data: content(), as: 'item'}">
+                        <tr>
+                            <td><a data-bind="attr:{'href' : '#/project/' + item.id}, text: item.name"></a></td>
+                            <td data-bind="text: item.description"></td>
+                            <td data-bind="text: item.author.firstName + ' ' + item.author.lastName "></td>
+                        </tr>
+                        </tbody>
+                    </table>*@
+                    <div class="project-list" data-bind='simpleGrid: gridViewModel'> </div>
+                    @*<a href="/" class="btn btn-default btn-flat pull-left">Back</a>
+                    <a href="#/projects/add" class="btn btn-primary btn-flat pull-right"><i class="fa fa-plus"></i> Add Project</a>*@
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+                    @*<a href="/" class="btn btn-default btn-flat pull-left"><i class="fa fa-undo"></i>  Back</a>*@
+                    @*<a href="#/projects/add" class="btn bg-purple btn-flat pull-right"><i class="fa fa-plus"></i> Add Project</a>*@
+                </div>
+            </div><!-- /.box -->
+
+        </div>
+        <div class="col-md-3">
+            <h4>Project description</h4>
+            <p class="small">
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
+            </p>
+        </div>
+    </div>
+</section>
+    <!-- /ko -->
